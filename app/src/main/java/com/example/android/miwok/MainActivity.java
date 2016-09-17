@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,25 +29,58 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
-    public void openNumbersActivity(View view){
-        Intent numbersIntent = new Intent(this, NumbersActivity.class);
-        startActivity(numbersIntent);
-    }
+        //Instantiate the TextViews
+        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
+        TextView familyTextView = (TextView) findViewById(R.id.family);
+        TextView colorsTextView = (TextView) findViewById(R.id.colors);
+        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
 
-    public void openFamilyMembersActivity(View view){
-        Intent numbersIntent = new Intent(this, FamilyMembersActivity.class);
-        startActivity(numbersIntent);
-    }
+        //Attach Click Listeners to instantiated views
+        numbersTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create a new Intent to open the {@link NumbersActivity}
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
 
-    public void openColorsActivity(View view){
-        Intent numbersIntent = new Intent(this, ColorsActivity.class);
-        startActivity(numbersIntent);
-    }
+        familyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create a new Intent to open the {@link NumbersActivity}
+                Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                startActivity(familyIntent);
+            }
+        });
 
-    public void openPhrasesActivity(View view){
-        Intent numbersIntent = new Intent(this, PhrasesActivity.class);
-        startActivity(numbersIntent);
+        familyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create a new Intent to open the {@link NumbersActivity}
+                Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+
+        colorsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create a new Intent to open the {@link NumbersActivity}
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+
+        phrasesTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create a new Intent to open the {@link NumbersActivity}
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
     }
 }
