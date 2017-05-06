@@ -55,15 +55,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        familyTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Create a new Intent to open the {@link NumbersActivity}
-                Intent familyIntent = new Intent(MainActivity.this, FamilyMembersActivity.class);
-                startActivity(familyIntent);
-            }
-        });
-
         colorsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

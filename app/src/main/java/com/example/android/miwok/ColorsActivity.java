@@ -15,18 +15,18 @@ public class ColorsActivity extends AppCompatActivity {
 
         //Create a list of words
         ArrayList<Word> colorWords = new ArrayList<Word>();
-        colorWords.add(new Word("red","weṭeṭṭi"));
-        colorWords.add(new Word("green","chokokki"));
-        colorWords.add(new Word("brown","ṭakaakki"));
-        colorWords.add(new Word("grey","ṭopoppi"));
-        colorWords.add(new Word("black","kululli"));
-        colorWords.add(new Word("white","kelelli"));
-        colorWords.add(new Word("dusty yellow","ṭopiisә"));
-        colorWords.add(new Word("mustard yellow","chiwiiṭә"));
+        colorWords.add(new Word("red","weṭeṭṭi", R.drawable.color_red));
+        colorWords.add(new Word("green","chokokki", R.drawable.color_green));
+        colorWords.add(new Word("brown","ṭakaakki", R.drawable.color_brown));
+        colorWords.add(new Word("grey","ṭopoppi", R.drawable.color_gray));
+        colorWords.add(new Word("black","kululli", R.drawable.color_black));
+        colorWords.add(new Word("white","kelelli", R.drawable.color_white));
+        colorWords.add(new Word("dusty yellow","ṭopiisә", R.drawable.color_dusty_yellow));
+        colorWords.add(new Word("mustard yellow","chiwiiṭә", R.drawable.color_mustard_yellow));
 
         // Create a {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter itemsAdapter = new WordAdapter(this, colorWords);
+        WordAdapter colorsAdapter = new WordAdapter(this, colorWords);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -35,6 +35,6 @@ public class ColorsActivity extends AppCompatActivity {
 
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(colorsAdapter);
     }
 }
