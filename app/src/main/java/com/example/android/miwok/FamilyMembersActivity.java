@@ -28,7 +28,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
 
         // Create a {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter familyAdapter = new WordAdapter(this, familyWords);
+        WordAdapter familyAdapter = new WordAdapter(this, familyWords, R.color.category_family);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the

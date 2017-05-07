@@ -8,14 +8,19 @@ import android.graphics.drawable.Drawable;
  */
 public class Word {
 
+    /***/
+    private final int NO_IMAGE_PROVIDED = -1;
+
     /** Drawable resource ID*/
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     /** Miwok translation for the word*/
     private String mMiwokTranslation;
 
     /** Default translation for the word*/
     private String mDefaultTranslation;
+
+
 
     public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId){
         mMiwokTranslation = miwokTranslation;
@@ -26,7 +31,6 @@ public class Word {
     public Word(String defaultTranslation, String miwokTranslation){
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
-        mImageResourceId = 0;
     }
 
     /** Get the Miwok translation for the word*/
@@ -42,5 +46,9 @@ public class Word {
     /** Get the Default translation for the word*/
     public String getDefaultTranslation(){
         return mDefaultTranslation;
+    }
+
+    public boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
