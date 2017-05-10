@@ -14,6 +14,9 @@ public class Word {
     /** Drawable resource ID*/
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
+    /**Raw audio file clip*/
+    private int mAudioResourceId;
+
     /** Miwok translation for the word*/
     private String mMiwokTranslation;
 
@@ -22,20 +25,27 @@ public class Word {
 
 
 
-    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId){
+    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId, int AudioResourceId){
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
         mImageResourceId = ImageResourceId;
+        mAudioResourceId = AudioResourceId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int AudioResourceId){
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
+        mAudioResourceId = AudioResourceId;
     }
 
-    /** Get the Miwok translation for the word*/
+    /** Get the Image Resource Id for the word*/
     public int getImageResourceId(){
         return mImageResourceId;
+    }
+
+    /** Get the Audio Resource Id for the word*/
+    public int getAudioResourceId(){
+        return  mAudioResourceId;
     }
 
     /** Get the Miwok translation for the word*/
