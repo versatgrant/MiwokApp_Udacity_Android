@@ -36,7 +36,8 @@ public class NumbersActivity extends AppCompatActivity {
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener(){
         @Override
         public void onAudioFocusChange(int focusChange) {
-            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange ==
+                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
                 // Pause playback because your Audio Focus was
                 // temporarily stolen, but will be back soon.
                 // i.e. for a phone call
@@ -50,22 +51,22 @@ public class NumbersActivity extends AppCompatActivity {
                  * mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener); <-- Implemented in releaseMediaPlayer() method
                  */
                 releaseMediaPlayer();
-            } else if (focusChange ==
+            } /*else if (focusChange ==
                     AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
                 // Lower the volume, because something else is also
                 // playing audio over you.
                 // i.e. for notifications or navigation directions
                 // Depending on your audio playback, you may prefer to
                 // pause playback here instead. You do you.
-                mPlayer.setVolume((float)0.1, (float)0.1);
-            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mPlayer.pause();
+            }*/ else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
                 // Resume playback, because you hold the Audio Focus
                 // again!
                 // i.e. the phone call ended or the nav directions
                 // are finished
                 // If you implement ducking and lower the volume, be
                 // sure to return it to normal here, as well.
-                mPlayer.setVolume((float)0.99, (float)0.99);
+                mPlayer.seekTo(0);
                 mPlayer.start();
             }
         }
