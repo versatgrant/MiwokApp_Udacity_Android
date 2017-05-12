@@ -20,6 +20,9 @@ import java.util.ArrayList;
  */
 public class FamilyMembersFragment extends Fragment {
 
+    //Used to store the Tabtitle of the Fragment
+    public String tabTitle;
+
     /** Handles playback of all the sound files */
     private MediaPlayer mPlayer;
 
@@ -82,6 +85,8 @@ public class FamilyMembersFragment extends Fragment {
 
     public FamilyMembersFragment() {
         // Required empty public constructor
+        //Not empty anymore :)
+        tabTitle = "Family Members";
     }
 
 

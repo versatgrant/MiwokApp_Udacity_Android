@@ -19,6 +19,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class ColorsFragment extends Fragment {
+    //Used to store the Tabtitle of the Fragment
+    public String tabTitle;
 
     /** Handles playback of all the sound files */
     private MediaPlayer mPlayer;
@@ -82,6 +84,8 @@ public class ColorsFragment extends Fragment {
 
     public ColorsFragment() {
         // Required empty public constructor
+        //Not empty anymore :)
+        tabTitle = "Colors";
     }
 
 
